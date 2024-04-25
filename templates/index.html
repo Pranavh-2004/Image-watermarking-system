@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Upload</title>
+</head>
+<body>
+    <h1>Upload Image</h1>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" accept="image/*" required>
+        <button type="submit">Upload</button>
+    </form>
+
+    {% if original_hash %}
+    <h2>Hashes:</h2>
+    <p>Original Image Hash: {{ original_hash }}</p>
+    <p>Embedded Image Hash: {{ embedded_hash }}</p>
+    {% endif %}
+
+    {% if download_link %}
+    <h2>Download Embedded Image:</h2>
+    <a href="{{ download_link }}">Download</a>
+    {% endif %}
+</body>
+</html>
