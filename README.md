@@ -1,1 +1,1 @@
-# Hashing
+# Image watermarking system
